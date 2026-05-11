@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>平台首页</title>
+<style>
+* {margin: 0;padding: 0;box-sizing: border-box;}
+body {
+  background: #0B0C0E;
+  color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  padding-bottom: 130px;
+}
+:root {
+  --green:#8AFF2B;
+  --card:#171A1D;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  background:#111315;
+}
+.logo {
+  width: 38px;height: 38px;
+  border-radius: 6px;background: var(--green);
+}
+.header-right {display: flex;gap: 18px;align-items: center;}
+.icon {font-size: 20px;}
+.btn-recharge {
+  background: var(--green);color: #000;
+  font-size: 13px;padding: 6px 14px;
+  border-radius: 20px;font-weight: 500;
+}
+.user-bar {
+  display: flex;align-items: center;gap: 12px;padding: 12px 16px;
+}
+.avatar {
+  width: 52px;height: 52px;border-radius: 50%;
+  border: 2px solid var(--green);
+}
+.user-info {flex: 1;}
+.name {font-size: 16px;font-weight: 600;}
+.vip {font-size: 12px;color: #999;margin-top: 4px;}
+.user-actions {display: flex;gap: 8px;}
+.btn-invite,.btn-money {
+  background:#22262a;color: #fff;
+  font-size: 12px;padding: 5px 10px;border-radius: 14px;
+}
+.banner {
+  height: 110px;margin: 0 16px;border-radius: 10px;background: var(--card);
+}
+.quick {
+  display: grid;grid-template-columns: repeat(6, 1fr);
+  gap: 6px;padding: 16px;
+}
+.quick-item {
+  display: flex;flex-direction: column;align-items: center;gap: 6px;
+}
+.quick-icon {
+  width: 40px;height: 40px;border-radius: 50%;
+  background: var(--card);display:flex;align-items:center;justify-content:center;
+  color: var(--green);font-size: 18px;
+}
+.quick-text {font-size: 11px;color: #ddd;}
+.sec-title {
+  display: flex;justify-content: space-between;
+  padding: 0 16px;margin: 16px 0 10px;
+}
+.sec-left {font-size: 15px;font-weight: 600;}
+.sec-more {font-size: 12px;color: #999;}
+.game-scroll {
+  display: flex;gap: 10px;padding: 0 16px;overflow-x: auto;
+}
+.game-item {
+  min-width: 100px;height: 130px;
+  background: var(--card);border-radius: 8px;position: relative;
+}
+.game-tag {
+  position: absolute;top: 6px;left: 6px;
+  background: var(--green);color: #000;
+  font-size: 10px;padding: 2px 6px;border-radius: 4px;
+}
+.game-name {
+  position: absolute;bottom: 8px;width: 100%;
+  text-align: center;font-size: 11px;color:#eee;
+}
+.tag-scroll {
+  display: flex;gap: 8px;padding: 0 16px;
+  overflow-x: auto;margin-bottom: 10px;
+}
+.tag {
+  white-space: nowrap;padding: 6px 12px;
+  background: var(--card);border-radius: 14px;font-size: 12px;
+}
+.tag.active {background: var(--green);color: #000;}
+.grid-3 {
+  display: grid;grid-template-columns: repeat(3, 1fr);
+  gap: 10px;padding: 0 16px;
+}
+.grid-item {
+  height: 120px;background: var(--card);
+  border-radius: 8px;position: relative;
+}
+.footer {
+  position: fixed;bottom: 0;left: 0;width: 100%;
+  height: 100px;background:#111315;
+  display:flex;justify-content:space-around;align-items:center;
+}
+.foot-item {
+  display:flex;flex-direction:column;align-items:center;
+  font-size:12px;color:#888;gap:4px;
+}
+.foot-item.active {color:var(--green);}
+.foot-icon {font-size:20px;}
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="logo"></div>
+  <div class="header-right">
+    <div class="icon">📞</div>
+    <div class="icon">🔔</div>
+    <div class="btn-recharge" onclick="location.href='recharge.html'">充值</div>
+  </div>
+</div>
+<div class="user-bar">
+  <div class="avatar"></div>
+  <div class="user-info">
+    <div class="name">WL1776918733036WH</div>
+    <div class="vip">VIP3 · 中级会员</div>
+  </div>
+  <div class="user-actions">
+    <div class="btn-invite" onclick="location.href='team.html'">邀请</div>
+    <div class="btn-money">0.07</div>
+  </div>
+</div>
+<div class="banner"></div>
+<div class="quick">
+  <div class="quick-item" onclick="location.href='recharge.html'">
+    <div class="quick-icon">💰</div>
+    <div class="quick-text">充值</div>
+  </div>
+  <div class="quick-item" onclick="location.href='withdraw.html'">
+    <div class="quick-icon">💳</div>
+    <div class="quick-text">提现</div>
+  </div>
+  <div class="quick-item">
+    <div class="quick-icon">🔁</div>
+    <div class="quick-text">转账</div>
+  </div>
+  <div class="quick-item">
+    <div class="quick-icon">👥</div>
+    <div class="quick-text">代理</div>
+  </div>
+  <div class="quick-item">
+    <div class="quick-icon">🎁</div>
+    <div class="quick-text">活动</div>
+  </div>
+  <div class="quick-item">
+    <div class="quick-icon">📄</div>
+    <div class="quick-text">记录</div>
+  </div>
+</div>
+
+<div class="sec-title">
+  <div class="sec-left">近期游玩</div>
+  <div class="sec-more">更多 ></div>
+</div>
+<div class="game-scroll">
+  <div class="game-item" onclick="location.href='game.html'">
+    <div class="game-tag">PG</div>
+    <div class="game-name">麻将胡了</div>
+  </div>
+</div>
+
+<div class="sec-title">
+  <div class="sec-left">电子游戏</div>
+  <div class="sec-more">全部 ></div>
+</div>
+<div class="tag-scroll">
+  <div class="tag active">热门</div>
+  <div class="tag">PG</div>
+  <div class="tag">PP</div>
+  <div class="tag">CQ9</div>
+</div>
+<div class="grid-3">
+  <div class="grid-item" onclick="alert('对接游戏API')"></div>
+  <div class="grid-item"></div>
+  <div class="grid-item"></div>
+</div>
+
+<div class="footer">
+  <div class="foot-item active">
+    <div class="foot-icon">🏠</div><span>首页</span>
+  </div>
+  <div class="foot-item" onclick="location.href='game.html'">
+    <div class="foot-icon">🎮</div><span>游戏</span>
+  </div>
+  <div class="foot-item" onclick="location.href='wheel.html'">
+    <div class="foot-icon">🎡</div><span>转盘</span>
+  </div>
+  <div class="foot-item" onclick="location.href='msg.html'">
+    <div class="foot-icon">💬</div><span>消息</span>
+  </div>
+  <div class="foot-item" onclick="location.href='mine.html'">
+    <div class="foot-icon">👤</div><span>我的</span>
+  </div>
+</div>
+</body>
+</html>
