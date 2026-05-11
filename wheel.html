@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>游戏大厅</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:#0B0C0E;color:#fff;font-family:system-ui;padding-bottom:130px;}
+:root{--green:#8AFF2B;--card:#171A1D;}
+.top-nav{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;background:#111315;}
+.nav-back{font-size:18px;}
+.nav-title{font-size:16px;font-weight:600;}
+.classify-tab{display:flex;background:#111315;}
+.tab-main{flex:1;text-align:center;line-height:42px;font-size:14px;color:#999;}
+.tab-main.active{color:var(--green);border-bottom:2px solid var(--green);}
+.sub-tab-wrap{padding:12px 16px;overflow-x:auto;}
+.sub-tab{display:flex;gap:8px;}
+.sub-item{white-space:nowrap;padding:6px 14px;background:var(--card);border-radius:16px;font-size:12px;color:#ccc;}
+.sub-item.active{background:var(--green);color:#000;}
+.game-container{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;padding:0 16px;}
+.game-box{height:122px;background:var(--card);border-radius:8px;position:relative;}
+.game-label{position:absolute;top:6px;left:6px;background:var(--green);color:#000;font-size:10px;padding:2px 6px;border-radius:4px;}
+.game-name{position:absolute;bottom:8px;width:100%;text-align:center;font-size:11px;color:#eee;}
+.footer{position:fixed;bottom:0;left:0;width:100%;height:100px;background:#111315;display:flex;justify-content:space-around;align-items:center;}
+.foot-item{display:flex;flex-direction:column;align-items:center;font-size:12px;color:#888;gap:4px;}
+.foot-item.active{color:var(--green);}
+.foot-icon{font-size:20px;}
+</style>
+</head>
+<body>
+<div class="top-nav">
+    <span class="nav-back" onclick="history.back()">&lt;</span>
+    <span class="nav-title">游戏大厅</span>
+    <span>🔍</span>
+</div>
+<div class="classify-tab">
+    <div class="tab-main active">电子游戏</div>
+    <div class="tab-main">真人视讯</div>
+</div>
+<div class="sub-tab-wrap">
+    <div class="sub-tab">
+        <div class="sub-item active">全部</div>
+        <div class="sub-item">PG</div>
+        <div class="sub-item">JDB</div>
+    </div>
+</div>
+<div class="game-container">
+    <div class="game-box" onclick="alert('对接游戏API')">
+        <div class="game-label">PG</div><div class="game-name">麻将胡了</div>
+    </div>
+</div>
+<div class="footer">
+    <div class="foot-item" onclick="location.href='index.html'"><div class="foot-icon">🏠</div><span>首页</span></div>
+    <div class="foot-item active"><div class="foot-icon">🎮</div><span>游戏</span></div>
+    <div class="foot-item" onclick="location.href='wheel.html'"><div class="foot-icon">🎡</div><span>转盘</span></div>
+    <div class="foot-item" onclick="location.href='msg.html'"><div class="foot-icon">💬</div><span>消息</span></div>
+    <div class="foot-item" onclick="location.href='mine.html'"><div class="foot-icon">👤</div><span>我的</span></div>
+</div>
+</body>
+</html>
