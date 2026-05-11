@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<title>幸运转盘</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+    background:#0B0C0E;
+    color:#fff;
+    font-family:system-ui;
+    padding-bottom:130px;
+}
+:root{
+    --green:#8AFF2B;
+    --card:#171A1D;
+}
+.top-bar{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:14px 16px;
+    background:#111315;
+}
+.back-icon{font-size:18px;}
+.wheel-title{font-size:16px;font-weight:600;}
+.wheel-wrap{
+    width:330px;
+    height:330px;
+    margin:40px auto;
+    position:relative;
+}
+.rotate-wheel{
+    width:100%;
+    height:100%;
+    border-radius:50%;
+    border:4px solid var(--green);
+    position:relative;
+    overflow:hidden;
+    transition:all 4.6s cubic-bezier(0.2,0.8,0.2,1);
+}
+.wheel-sector{
+    position:absolute;
+    width:50%;
+    height:50%;
+    left:50%;
+    top:0;
+    transform-origin:left bottom;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:12px;
+}
+.s1{transform:rotate(0deg);background:rgba(138,255,43,0.12);}
+.s2{transform:rotate(60deg);background:#171A1D;}
+.s3{transform:rotate(120deg);background:rgba(138,255,43,0.12);}
+.s4{transform:rotate(180deg);background:#171A1D;}
+.s5{transform:rotate(240deg);background:rgba(138,255,43,0.12);}
+.s6{transform:rotate(300deg);background:#171A1D;}
+.center-btn{
+    width:82px;
+    height:82px;
+    border-radius:50%;
+    background:var(--green);
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    color:#000;
+    font-weight:bold;
+}
+.tip-text{font-size:11px;margin-top:3px;}
+.num-tip{
+    text-align:center;
+    font-size:14px;
+    color:#ccc;
+    margin-top:10px;
+}
+.num-color{color:var(--green);}
+.footer{
+    position:fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+    height:100px;
+    background:#111315;
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+}
+.foot-item{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    font-size:12px;
+    color:#888;
+    gap:4px;
+}
+.foot-item.active{
+    color:var(--green);
+}
+.foot-icon{font-size:20px;}
+</style>
+</head>
+<body>
+<div class="top-bar">
+    <span class="back-icon" onclick="history.go(-1)">&lt;</span>
+    <span class="wheel-title">幸运大转盘</span>
+    <span></span>
+</div>
+<div class="wheel-wrap">
+    <div class="rotate-wheel" id="wheelDom">
+        <div class="wheel-sector s1">0.1USDT</div>
+        <div class="wheel-sector s2">谢谢参与</div>
+        <div class="wheel-sector s3">0.5USDT</div>
+        <div class="wheel-sector s4">1USDT</div>
+        <div class="wheel-sector s5">0.3USDT</div>
+        <div class="wheel-sector s6">福利红包</div>
+    </div>
+    <div class="center-btn" onclick="startLottery()">
+        开始抽奖
+        <div class="tip-text">剩余3次...
