@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<title>余额提现</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+    background:#0B0C0E;
+    color:#fff;
+    font-family:system-ui;
+    padding-bottom:30px;
+}
+:root{
+    --green:#8AFF2B;
+    --card:#171A1D;
+}
+.top-nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:14px 16px;
+    background:#111315;
+}
+.nav-back{font-size:18px;}
+.nav-title{font-size:16px;font-weight:600;}
+.bal-show{
+    margin:16px;
+    background:var(--card);
+    border-radius:10px;
+    padding:18px;
+    text-align:center;
+}
+.bal-text{font-size:13px;color:#999;}
+.bal-num{
+    font-size:26px;
+    color:var(--green);
+    font-weight:bold;
+    margin:8px 0;
+}
+.form-box{
+    margin:16px;
+}
+.form-item{
+    margin-bottom:14px;
+}
+.form-label{
+    font-size:13px;
+    color:#ccc;
+    margin-bottom:6px;
+    display:block;
+}
+.form-input{
+    width:100%;
+    height:44px;
+    background:var(--card);
+    border:none;
+    border-radius:8px;
+    padding:0 12px;
+    color:#fff;
+    outline:none;
+}
+.all-btn{
+    text-align:right;
+    font-size:13px;
+    color:var(--green);
+    margin:6px 0;
+}
+.with-btn{
+    width:calc(100% - 32px);
+    margin:10px 16px;
+    height:46px;
+    background:var(--green);
+    color:#000;
+    border:none;
+    border-radius:22px;
+    font-size:15px;
+    font-weight:600;
+}
+</style>
+</head>
+<body>
+<div class="top-nav">
+    <span class="nav-back" onclick="history.go(-1)">&lt;</span>
+    <span class="nav-title">余额提现</span>
+    <span></span>
+</div>
+<div class="bal-show">
+    <div class="bal-text">可提现余额(USDT)</div>
+    <div class="bal-num">0.07</div>
+</div>
+<div class="form-box">
+    <div class="form-item">
+        <span class="form-label">选择链类型</span>
+        <input class="form-input" placeholder="TRC20 / ERC20 / BSC">
+    </div>
+    <div class="form-item">
+        <span class="form-label">收款钱包地址</span>
+        <input class="form-input" placeholder="请粘贴您的USDT钱包地址">
+    </div>
+    <div class="form-item">
+        <span class="form-label">提现金额</span>
+        <input class="form-input" id="withMoney" placeholder="请输入提现金额">
+        <div class="all-btn" onclick="allMoney()">全部提现</div>
+    </div>
+</div>
+<button class="with-btn" onclick="withSubmit()">提交提现</button>
+<script>
+function allMoney(){
+    document.getElementById('withMoney').value = "0.07"
+}
+function withSubmit(){
+    alert("提现已提交，等待后台审核")
+}
+</script>
+</body>
+</html>
